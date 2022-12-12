@@ -1,0 +1,11 @@
+<?php
+
+const CONFIG = [
+    'app_name' => '',
+    'database' => [
+        'host' => '',
+        'user' => '',
+        'password' => '',
+        'dbname' => '',
+    ],
+];

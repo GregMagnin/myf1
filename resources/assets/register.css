@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.registerContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.leftSide {
+display: flex;
+flex-direction: column;
+width: 50vw;
+align-items: center;
+}
+
+.upperText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    margin-top: 7vh;
+}
+
+.titleRegister {
+    font-size: 3.2vw;
+    font-weight: 400;
+}
+
+.textRegister {
+    text-align: center;
+    color: #808080;
+    font-size: 3.2vw;
+}
+
+.formRegister {
+   margin-top: 10vh;
+   display: flex;
+   flex-direction: column;
+   gap: 8vh;
+   align-items: center;
+   justify-content: center;
+   margin-left: auto;
+   margin-right: auto; 
+}
+
+.formRegister input {
+    width: 40vw;
+    height: 5.5vh;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.formRegister::placeholder {
+    font-family: 'Inter', sans-serif;
+}
+
+input[type="text"] {
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+
+input[type="password"] {
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+
+.hasAccompt {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    margin-top: 2vh;
+}
+
+.hasAccompt a {
+    text-decoration: underline;
+}
+
+.signUpGoogle {
+    margin-top: 7vh;
+}
+
+.buttonGoogle {
+    display: flex;
+    background-color: white;
+    color: #7d7d7d;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: solid 1px black;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    background-image: url('../../public/images/google.png');
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+  }
+
+.rightSideRegister {
+    display: flex;
+    width: 50vw;
+    background-image: url(../../public/images/f1-car-g535d6d5c5_1920.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .imgRight {
+      display: none;
+    }
+    .leftSide {
+      width: 100vw;
+    }
+    .rightSide {
+        width: 0vw;
+    }
+    .titleRegister {
+        font-size: 5vw;
+    }
+    .textRegister {
+        font-size: 4vw;
+    }
+    input[type="text"] {
+        font-size: 2.8vw;
+    }
+    input[type="password"] {
+        font-size: 2.8vw;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .titleRegister {
+        font-size: 8vw;
+    }
+    .textRegister {
+        font-size: 8vw;
+    }
+    input[type="text"] {
+        font-size: 4.8vw;
+    }
+    input[type="password"] {
+        font-size: 4.8vw;
+    }
+  }
+  

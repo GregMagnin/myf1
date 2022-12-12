@@ -1,0 +1,23 @@
+{
+    "name": "acs/myf1",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\": "database"
+        },
+        "files": [
+            "helpers.php",
+            "config.php"
+        ],
+    "authors": [
+        {
+            "name": "GregMagnin",
+            "email": "gregmagnin667@gmail.com"
+        }
+    ],
+    "require": {}
+},
+    "require": {
+        "respect/validation": "^2.2"
+    }
+}

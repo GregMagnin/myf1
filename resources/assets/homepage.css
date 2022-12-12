@@ -1,0 +1,33 @@
+.navbar {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.navList > li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.navList {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    width: 100vw;
+}
+
+.verticalBar {
+    width: 2px;
+    height: 40px;
+    background-color: grey;
+}
+
+.searchIcon > img {
+    width: 40px;
+    height: 40px;
+}
+
