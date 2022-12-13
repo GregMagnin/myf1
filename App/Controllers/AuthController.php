@@ -19,19 +19,21 @@ class AuthController {
     }
 
     public function registerUser(): void {
-        if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])) {
+        if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])) {
+            $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
             $task = new AuthModel();
-            $task->createUser($email, $password);
+            $task->createUser($username, $email, $password);
             header ('Location:/login');
         } else {
             header('Location:/error');
         }}
 
         public function logUser(): void {
-            if (!isset($_POST['email']) && empty($_POST['email']) && !isset($_POST['password']) && empty($_POST['password'])) {
-          
+          if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])) {
+              $errorMessage = false;
+              $username = $_POST['username'];
               $email = $_POST['email'];
               $password = $_POST['password'];
               $task = new AuthModel();
@@ -39,19 +41,18 @@ class AuthController {
               $id = $user["id"];
               $email = $user["email"];
               $hashed_password = $user["password"]; 
-              if (!password_verify($password, $hashed_password)) {
-                if (!isset($errorMessage)) {
-                  $errorMessage = "Le nom d'utilisateur ou le mot de passe est incorrect";
-                  $_SESSION["errorMessage"] = $errorMessage;
-                }
-                header("location: /login");
-              } else {
+              if (password_verify($password, $hashed_password)) {
                 $_SESSION["loggedin"] = true;
                 $_SESSION["id"] = $id;
-                $_SESSION["user"] = $email;                        
+                $_SESSION["user"] = $email;
                 header("location: /homepage");
                 exit();
+              } else {
+                $errorMessage = true;
+                $_SESSION["errorMessage"] = $errorMessage;                        
+                header ("location: /errorMessage");
               }
-            }
+            } 
+
         }
     }

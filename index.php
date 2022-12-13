@@ -28,8 +28,8 @@ switch (getUri()) {
     case '/logUser':
          $auth->logUser();
         break;
-    case '/error':
-         $page->error();
+    case '/errorMessage':
+         $page->errorMessage();
         break;
     
 

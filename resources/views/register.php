@@ -18,8 +18,9 @@
             </div>
             
             <form class="formRegister" action="/registerUser" method="POST" class="form">
-                <input type="text" name="email" id="email" placeholder="Email">
-                <input type="password" name="password" id="password" placeholder="Mot de passe">
+            <input type="text" name="username" id="username" placeholder="Nom d'utilisateur">    
+            <input type="text" name="email" id="email" placeholder="Email">
+            <input type="password" name="password" id="password" placeholder="Mot de passe">
             <div class="hasAccompt">
                 <p>Déjà un compte ? <br>
                     Connectez vous <a href="/login">ici</a> </p>

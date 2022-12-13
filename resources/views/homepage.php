@@ -16,9 +16,17 @@
     <li class="popularPosts">ARTICLES EN <br> TENDANCES</li>
     <li class="standings">CLASSEMENT</li>
     <li class="searchIcon"><img src="../../public/images/search.png" alt="search icon"></li>
-    <li class="userInfo">Inscrivez-vous</li>
+    <li class="userInfo"><?php if ($_SESSION["loggedin"] = true) {
+        echo 'Bonjour ' . $_SESSION["user"];
+    } else {
+        echo 'Inscrivez vous';
+    }
+    ?>
+     </li>
  </ul>
 </nav>
+
+
 
 
 

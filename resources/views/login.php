@@ -18,9 +18,10 @@
             </div>
             
             <form class="formLogin" action="/logUser" method="POST">
+                <input type="text" name="username" id="username" placeholder="Nom d'utilisateur">
                 <input type="text" name="email" id="email" placeholder="Email">
                 <input type="password" name="password" id="password" placeholder="Mot de passe">
-                <div class="errorMessage"><?php echo $_SESSION["errorMessage"];?></div>
+                <div class="errorMessage shake-horizontal"><?php echo $_SESSION["viewErrorMessage"]; $_SESSION["viewErrorMessage"] = false; ?></div>
             <div class="hasAccompt">
                 <p>Pas de compte ? <br>
                     Inscrivez vous <a href="/register">ici</a> </p>

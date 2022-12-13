@@ -8,8 +8,8 @@ class PageController {
     public function homepage(): string {
         return require './resources/views/homepage.php';
     }
-    public function error(): string {
-        return require './resources/views/error.html';
+    public function errorMessage(): string {
+        return require './resources/exceptions/errorMessage.php';
     }
 
 }
