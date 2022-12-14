@@ -16,10 +16,10 @@ class AuthModel extends Connection {
         $query->execute();
     }
 
-    public function getUserByMail(string $email): ?array {
-        $sql = "SELECT id, email, password FROM users WHERE email = :email"; 
+    public function getUserByName(string $username): ?array {
+        $sql = "SELECT id, username, password FROM users WHERE username = :username"; 
         $query = $this->connection->prepare($sql);
-        $query->bindParam(":email", $email, \PDO::PARAM_STR);
+        $query->bindParam(":username", $username, \PDO::PARAM_STR);
         $query->execute();
         $row = $query->fetch();
             
@@ -29,4 +29,4 @@ class AuthModel extends Connection {
     
         return $row;    
     }
-}
+    }

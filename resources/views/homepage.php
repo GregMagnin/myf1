@@ -15,17 +15,31 @@
     <li class="lastPosts">DERNIERS <br> ARTICLES</li>
     <li class="popularPosts">ARTICLES EN <br> TENDANCES</li>
     <li class="standings">CLASSEMENT</li>
+    <a href="/publish"> <li class="createArticle">PUBLIER UN ARTICLE</li></a>
     <li class="searchIcon"><img src="../../public/images/search.png" alt="search icon"></li>
-    <li class="userInfo"><?php if ($_SESSION["loggedin"] = true) {
-        echo 'Bonjour ' . $_SESSION["user"];
+    <li class="userInfo" id="userInfo"><?php if (isset($_SESSION["loggedin"])) {
+        echo 'MON PROFIL';
+        
     } else {
-        echo 'Inscrivez vous';
+        echo '<a href="/register"> Inscrivez vous </a>' ;
     }
-    ?>
-     </li>
+    ?></li>
  </ul>
 </nav>
 
+<div id="userInfoMenu" class=" <?= (isset($_SESSION["loggedin"])) ? "open" : "hidden" ?>">
+<p><?=
+        'Bonjour ' . $_SESSION["user"];
+    ?></p>
+<hr class="hr1">
+<a href="/myAccount"><p>Mon compte</p></a>
+<hr >
+<a href="/myArticles"> <p>Mes articles</p></a>
+<hr>
+<a href="/myComments"> <p>Mes commentaires</p></a>
+<hr>
+<a href="/logout"> <p class="logoutText">Se déconnecter</p></a>
+</div>
 
 
 

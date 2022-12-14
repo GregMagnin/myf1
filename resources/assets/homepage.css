@@ -12,6 +12,10 @@
     cursor: pointer;
 }
 
+.navList > a {
+    color:white;
+}
+
 .navList {
     display: flex;
     align-items: center;
@@ -29,5 +33,40 @@
 .searchIcon > img {
     width: 40px;
     height: 40px;
+}
+
+.userInfo a {
+    color: white;
+}
+
+#userInfoMenu {
+    display: none;
+    position: absolute;
+    right: 45px;
+    z-index: 10;
+    gap: 7px;
+    background-color: black;
+    color: white;
+    width: 8vw;
+    height: 19.5vh;
+    font-family: 'Inter', sans-serif;
+}
+
+#userInfoMenu a {
+    color: white;
+}
+
+#userInfoMenu.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#userInfoMenu hr {
+    width: 10vw;
+}
+
+.logoutText {
+    color: red;
 }
 

@@ -19,15 +19,14 @@
             
             <form class="formLogin" action="/logUser" method="POST">
                 <input type="text" name="username" id="username" placeholder="Nom d'utilisateur">
-                <input type="text" name="email" id="email" placeholder="Email">
                 <input type="password" name="password" id="password" placeholder="Mot de passe">
-                <div class="errorMessage shake-horizontal"><?php echo $_SESSION["viewErrorMessage"]; $_SESSION["viewErrorMessage"] = false; ?></div>
+                <div class="errorMessage shake-horizontal"><?php if (isset($_SESSION["viewErrorMessage"])) { echo $_SESSION["viewErrorMessage"]; $_SESSION["viewErrorMessage"] = false; } ?></div>
             <div class="hasAccompt">
                 <p>Pas de compte ? <br>
                     Inscrivez vous <a href="/register">ici</a> </p>
             </div>
-            <div class="signUpGoogle"><button class="buttonGoogle"> <span class="logo"></span>Se connecter avec
-                    Google</button></div>
+            <div class="signUpGoogle"><a href="/homepage"><button type="submit" formaction="/logUser" class="buttonSignIn">Se connecter</button></a></div>
+            <div class="noSignUp"><a href="/homepage"><p class="buttonSignIn">Accèder au site sans se connecter</p></a></div>
         </div>
         <div class="rightSideLogin">
         </div>

@@ -1,0 +1,41 @@
+.image404 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 30vw;
+    height: 40vh;
+    margin-top: 18vh;
+}
+
+.text404 {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.button404 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-top: 2vh;
+}
+
+.button404 button {
+    width: 7vw;
+    height: 5vh;
+    font-size: 15px;
+    font-family: 'Inter' sans-serif;
+}
+.title404 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 50px;
+    font-family: 'Inter', sans-serif;
+    color: red;
+}

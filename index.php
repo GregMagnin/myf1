@@ -19,7 +19,7 @@ switch (getUri()) {
     case '/register':
         $auth->register();
         break;
-    case '/homepage': 
+    case '/homepage':
         $page->homepage();
         break;
     case '/registerUser':
@@ -31,7 +31,20 @@ switch (getUri()) {
     case '/errorMessage':
          $page->errorMessage();
         break;
-    
+    case '/errorMessageMail':
+        $page->errorMessageMail();
+        break;
+    case '/errorMessageUsername':
+        $page->errorMessageUsername();
+        break;
+    case '/errorMessagePassword':
+        $page->errorMessagePassword();
+        break;
+    case '/logout':
+        $auth->logout();
+        break;
+    case '/error':
+        $page->error();
 
 }
 

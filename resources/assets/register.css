@@ -75,8 +75,10 @@ input[type="password"] {
     text-decoration: underline;
 }
 
-.signUpGoogle {
+.signUp {
     margin-top: 7vh;
+    display: flex;
+    gap: 3vw;
 }
 
 .buttonGoogle {
@@ -91,6 +93,7 @@ input[type="password"] {
     border-radius: 10px;
     align-items: center;
     justify-content: center;
+    font-family: 'Inter', sans-serif;
 }
 
 .logo {
