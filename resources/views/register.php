@@ -21,11 +21,11 @@
             <input type="text" name="username" id="username" placeholder="Nom d'utilisateur">    
             <input type="text" name="email" id="email" placeholder="Email">
             <input type="password" name="password" id="password" placeholder="Mot de passe">
-            <div class="errorMessage shake-horizontal"><?php if (isset($_SESSION["viewErrorMessageMail"])) { echo $_SESSION["viewErrorMessageMail"]; $_SESSION["viewErrorMessageMail"] = false;
-            if (isset($_SESSION["viewErrorMessageUsername"])) { echo $_SESSION["viewErrorMessageUsername"]; $_SESSION["viewErrorMessageUsername"] = false;
-                if (isset($_SESSION["viewErrorMessagePassword"])) { echo $_SESSION["viewErrorMessagePassword"]; $_SESSION["viewErrorMessagePassword"] = false;
+            <div class="errorMessage shake-horizontal"><?php if (isset($_SESSION["viewErrorMessageMail"])) { echo $_SESSION["viewErrorMessageMail"]; $_SESSION["viewErrorMessageMail"] = false; }
+            if (isset($_SESSION["viewErrorMessageUsername"])) { echo $_SESSION["viewErrorMessageUsername"]; $_SESSION["viewErrorMessageUsername"] = false; }
+                if (isset($_SESSION["viewErrorMessagePassword"])) { echo $_SESSION["viewErrorMessagePassword"]; $_SESSION["viewErrorMessagePassword"] = false; }
             
-            }}} ?></div>
+             ?></div>
             <div class="hasAccompt">
                 <p>Déjà un compte ? <br>
                     Connectez vous <a href="/login">ici</a> </p>

@@ -1,3 +1,8 @@
+#homepage {
+    overflow-y: scroll;
+    height: 100vh;
+}
+
 .navbar {
     width: 100vw;
     height: 100px;
@@ -48,8 +53,15 @@
     background-color: black;
     color: white;
     width: 8vw;
-    height: 19.5vh;
+    height: 230px;
+    border-radius: 10px;
     font-family: 'Inter', sans-serif;
+}
+
+@media screen and (min-width: 1500px) {
+    #userInfoMenu {
+        height: 180px;
+    }    
 }
 
 #userInfoMenu a {
@@ -70,3 +82,104 @@
     color: red;
 }
 
+.containerFirstArticles {
+    display: flex;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    height: 60vh;
+}
+
+.firstArticle {
+    width: 35vw;
+    height: 52.5vh;
+    margin-left: 3vw;
+    margin-top: 3vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.articlesRight {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    height: 52.5vh;
+    margin-top: 3vh;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 2.5vh;
+}
+
+.firstArticleRight {
+    width: 15vw;
+    height: 25vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.secondArticleRight {
+    width: 15vw;
+    height: 25vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.firstArticle h1 {
+    color: white;
+    font-size: 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+.firstArticleRight h1 {
+    color: white;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 2vh;
+}
+
+.secondArticleRight h1 {
+    color: white;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 2vh;
+}
+
+.containerArticles {
+    display: flex;
+    width: 38vw;
+    margin-left: 22.5vw;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    height: 20vh;
+    gap: 10px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.containerArticles img {
+    width: 200px;
+    height: 200px;
+}
+
+.containerArticles .title  {
+    margin: auto;
+}
+
+.articlesText {
+    display: flex;
+    flex-direction: column;
+}
+
+.moreInfo {
+    color: gray;
+    font-size: 15px;
+    margin: auto;
+}
+
+.hrHomepage {
+    color: gray;
+    width: 80vw;
+    margin: auto;
+}

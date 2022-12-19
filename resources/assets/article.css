@@ -1,0 +1,28 @@
+#article {
+    width: 100vw;
+    height: 100vh;
+}
+
+.articleImage {
+    margin-left: 29.6vw;
+    margin-top: 10vh;    
+    width: 40vw;
+    height: 40vh;
+}
+
+.articleTitlePage {
+    margin: auto;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    margin-top: 2vh;
+}
+
+.author {
+    color: gray;
+    font-family: 'Inter';
+}
+
+.publish {
+    color: gray;
+    font-family: 'Inter';
+}

@@ -45,7 +45,10 @@ switch (getUri()) {
         break;
     case '/error':
         $page->error();
-
+        break;
+    case '/article':
+        $page->article($_GET['id']);
+        break;
 }
 
 ?>

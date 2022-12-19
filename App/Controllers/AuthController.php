@@ -19,8 +19,9 @@ class AuthController {
     }
 
     public function registerUser(): void {
-        $emailValidator = \Respect\Validation\Validator::email();
-
+        $emailValidator = v::email();
+       $usernameValidator = v::alnum();
+       $passwordValidator = v::stringType()->length(6, null);
         if (isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['password']) && !empty($_POST['password'])) {
             $username = $_POST['username'];
             $email = $_POST['email'];
@@ -29,6 +30,14 @@ class AuthController {
                 $errorMessageMail = true;
                     $_SESSION["errorMessageMail"] = $errorMessageMail;                        
                     header ("location: /errorMessageMail");
+             } elseif (!$usernameValidator->validate($username)) {
+              $errorMessageUsername = true;
+              $_SESSION["errorMessageUsername"] = $errorMessageUsername;                        
+              header ("location: /errorMessageUsername");
+             } elseif (!$passwordValidator->validate($password)) {
+              $errorMessagePassword = true;
+              $_SESSION["errorMessagePassword"] = $errorMessagePassword;                        
+              header ("location: /errorMessagePassword");
             } else {
             $task = new AuthModel();
             $task->createUser($username, $email, $password);

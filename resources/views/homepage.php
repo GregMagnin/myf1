@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyF1</title>
 </head>
-<body>
+<body id="homepage">
 
 <nav class="navbar">
  <ul class="navList">
@@ -41,9 +41,63 @@
 <a href="/logout"> <p class="logoutText">Se déconnecter</p></a>
 </div>
 
+<div class="containerFirstArticles">
+<a href="/article?id=<?php echo $articles[0]['id'] ?>"><div class="firstArticle">
+<h1><?php echo $articles[0]['title']; ?></h1>
+</div></a>
 
 
+<div class="articlesRight">
 
+<a href="/article?id=<?php echo $articles[1]['id'] ?>"><div class="firstArticleRight">
+    <h1><?php echo $articles[1]['title']; ?> </h1>
+</div>
+</a>
+<a href="/article?id=<?php echo $articles[2]['id']; ?>">
+<div class="secondArticleRight">
+<h1><?php echo $articles[2]['title']; ?> </h1>
+</div></a>    
+</div>
+</div>
+
+<?php foreach ($articles as $article) { ?>
+    <a href="/article?id=<?php echo $article['id'] ?>">
+    <div class="containerArticles">
+    <img src="<?= $article['image'] ?> " alt="Image de l'article">
+    <div class="articlesText">
+    <p class="title">
+    <?= $article['title'] ?>  </p>  <br>
+    <p class="moreInfo"><?= $article['author'] ?> <br>
+    Date de publication : <?= $article['publish_date'] ?></p>
+    </div>
+</div>
+</a>
+<hr class="hrHomepage">
+
+<?php } ?>
+
+<style>
+.firstArticle {
+    background-image: url(<?php echo $articles[0]['image']; ?>);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.firstArticleRight {
+    background-image: url(<?php echo $articles[1]['image']; ?>);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.secondArticleRight {
+    background-image: url(<?php echo $articles[2]['image']; ?>);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+</style>
 <script type="module" src="http://localhost:5173/@vite/client"></script>
 <script type="module" src="http://localhost:5173/resources/scripts/main.js"></script>
 
