@@ -21,7 +21,7 @@
         echo 'MON PROFIL';
         
     } else {
-        echo '<a href="/register"> Inscrivez vous </a>' ;
+        echo '<a href="/register"> Inscrivez vous </a>';
     }
     ?></li>
  </ul>

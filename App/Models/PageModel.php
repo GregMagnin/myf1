@@ -21,4 +21,14 @@ class PageModel extends Connection {
         return $statement->fetch();
     }
 
+    public function updateViews(): array {
+        $pdo = $this->connection;
+        $sql = 'UPDATE articles SET views = views + 1 WHERE id = ?';
+        $statement = $pdo->prepare($sql);
+        $statement-bindValue('i', $articleId);
+        $statement->execute();
+        
+
+    }
+
 }

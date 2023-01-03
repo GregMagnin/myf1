@@ -41,14 +41,32 @@
 <a href="/logout"> <p class="logoutText">Se déconnecter</p></a>
 </div>
 
+<div class="articlePage">
+
+<div class="leftSIde">
+<div class="authorPublish">
 <p class="author">Autheur : <?= $article['author']; ?> </p> <p class="publish">Date de publication : <?= $article['publish_date']; ?></p>
+</div>
 <img class="articleImage" src="<?= $article['image']; ?>" alt="Image de l'article"> <br>
 <h1 class="articleTitlePage"><?= $article['title']; ?></h1> <br>
-
-
-
 <p class="contentArticle"><?= $article['content'] ?> </p>
-    
+</div>
+
+<div class="rightSide">
+    <?php foreach ($article as $item) { ?>
+    <div class="articleTendance"><?= $article['title'] ?></div>
+</div>
+
+<?php } ?>
+</div>
+<style>
+    .articleTendance {
+        background-image: url(<?= $article['image']; ?> );
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+</style>
 
 <script type="module" src="http://localhost:5173/@vite/client"></script>
 <script type="module" src="http://localhost:5173/resources/scripts/main.js"></script>

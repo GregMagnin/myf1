@@ -1,20 +1,24 @@
 #article {
     width: 100vw;
     height: 100vh;
+    overflow-y: scroll;
 }
 
+
+
 .articleImage {
-    margin-left: 29.6vw;
-    margin-top: 10vh;    
+    margin-left: 10.6vw;
+    margin-top: 7vh;    
     width: 40vw;
     height: 40vh;
 }
 
 .articleTitlePage {
-    margin: auto;
+    margin-left: 10vw;
     text-align: center;
     font-family: 'Inter', sans-serif;
     margin-top: 2vh;
+    width: 40vw;
 }
 
 .author {
@@ -26,3 +30,42 @@
     color: gray;
     font-family: 'Inter';
 }
+
+.authorPublish {
+    display: flex;
+    gap: 10px;
+}
+
+.contentArticle {
+    font-family: 'Inter';
+    margin-left: 15vw;
+    font-size: 20px;
+    width: 35vw;
+
+}
+
+.articlePage {
+    width: 100vw;
+    display: flex;
+}
+
+.leftSide {
+    width: 80vw;
+}
+
+.rightSide {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: auto;
+}
+
+.articleTendance {
+    width: 10vw;
+    height: 10vh;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin-top: 20vh;
+}
+

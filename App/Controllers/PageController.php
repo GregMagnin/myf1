@@ -17,6 +17,12 @@ class PageController {
         return require './resources/views/article.php';
     }
 
+    public function updateViews($articleId) {
+        $pageModel = new PageModel();
+        $views = $pageModel->updateViews();
+        return $views;
+    }
+
     public function errorMessage(): string {
         return require './resources/exceptions/errorMessage.php';
     }
