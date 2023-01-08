@@ -21,14 +21,23 @@ class PageModel extends Connection {
         return $statement->fetch();
     }
 
-    public function updateViews(): array {
+    public function updateViews(int $id): void {
         $pdo = $this->connection;
-        $sql = 'UPDATE articles SET views = views + 1 WHERE id = ?';
+        $sql = 'UPDATE articles SET views = views + 1 WHERE id = :id';
         $statement = $pdo->prepare($sql);
-        $statement-bindValue('i', $articleId);
-        $statement->execute();
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
         
-
+        $statement->execute();
     }
 
+    public function sortArticlesByViews() : array {
+        $pdo = $this->connection;
+        $sql = 'SELECT * FROM articles ORDER BY views DESC';
+        return $pdo->query($sql)->fetchAll();
+    }
+
+    public function publishComments(string $content, ): array {
+        $pdo = $this->connection;
+        $sql = 
+    }
 }

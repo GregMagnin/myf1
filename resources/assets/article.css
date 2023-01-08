@@ -4,68 +4,123 @@
     overflow-y: scroll;
 }
 
-
-
-.articleImage {
-    margin-left: 10.6vw;
-    margin-top: 7vh;    
-    width: 40vw;
-    height: 40vh;
-}
-
-.articleTitlePage {
-    margin-left: 10vw;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    margin-top: 2vh;
-    width: 40vw;
-}
-
-.author {
-    color: gray;
-    font-family: 'Inter';
-}
-
-.publish {
-    color: gray;
-    font-family: 'Inter';
-}
-
-.authorPublish {
-    display: flex;
-    gap: 10px;
-}
-
-.contentArticle {
-    font-family: 'Inter';
-    margin-left: 15vw;
-    font-size: 20px;
-    width: 35vw;
-
-}
-
 .articlePage {
-    width: 100vw;
     display: flex;
+    width: 100vw;
+    flex-direction: row;
 }
 
 .leftSide {
-    width: 80vw;
-}
-
-.rightSide {
-    width: 20vw;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    width: 80vw;
+    align-items: flex-start;
+}
+
+.authorPublish {
+    color: grey;
+    margin-left: 0.5vw;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+.articleImageContainer {
+    width: 80vw;
+    height: 50vh;
+    display: flex;
+    
+}
+
+.articleImage{
+    width: 50vw;
+    height: 50vh;
+    margin-top: 5vh;
     margin: auto;
 }
 
+.articleTitlePage {
+    width: 80vw;
+    text-align: center;
+    margin-top: 5vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.contentArticleContainer {
+    width: 80vw;
+    height: auto;
+    display: flex;
+}
+
+.contentArticle {
+    width: 40vw;
+    margin: auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: auto;
+    margin-right: 4vw;
+    margin-top: 70vh;
+}
+
 .articleTendance {
-    width: 10vw;
-    height: 10vh;
+    display: flex;
+    flex-direction: column;
     color: white;
     font-family: 'Inter', sans-serif;
-    margin-top: 20vh;
+    margin-top: 5vh;
+    width: 25vw;
+    height: 25vh;
+    font-size: 20px;
+    font-weight: 700;
 }
+
+.articleTendance>p {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    text-overflow: ellipsis;
+    max-width: 20vw;
+}
+
+.rightSide>h1 {
+    font-family: 'Inter', sans-serif;
+    width: 20vw;
+    text-align: center;
+}
+
+.letCommentBoxContainer {
+    width: 50vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin-left: 19vw;
+}
+
+.letCommentBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 50vh;
+    border: 1px solid grey;
+    margin-top: 10vh;
+}
+
+.letCommentBox::placeholder {
+    color: grey;
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
 

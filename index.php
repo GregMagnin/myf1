@@ -47,6 +47,7 @@ switch (getUri()) {
         $page->error();
         break;
     case '/article':
+        $page->updateViews($_GET['id']);
         $page->article($_GET['id']);
         break;
 }

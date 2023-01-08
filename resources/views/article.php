@@ -43,30 +43,37 @@
 
 <div class="articlePage">
 
-<div class="leftSIde">
+<div class="leftSide">
 <div class="authorPublish">
-<p class="author">Autheur : <?= $article['author']; ?> </p> <p class="publish">Date de publication : <?= $article['publish_date']; ?></p>
+<p class="author">Autheur : <?= $article['author']; ?> </p> <p class="publish">Date de publication : <?= $article['publish_date']; ?></p> <p class="views"><?= $article['views'];  ?> vues</p>
 </div>
+<div class="articleImageContainer">
 <img class="articleImage" src="<?= $article['image']; ?>" alt="Image de l'article"> <br>
+</div>
 <h1 class="articleTitlePage"><?= $article['title']; ?></h1> <br>
+<div class="contentArticleContainer">
 <p class="contentArticle"><?= $article['content'] ?> </p>
 </div>
 
-<div class="rightSide">
-    <?php foreach ($article as $item) { ?>
-    <div class="articleTendance"><?= $article['title'] ?></div>
+<div class="letCommentBoxContainer">
+<input type="text" class="letCommentBox" name="letCommentBox" id="letCommentBox" placeholder="Laisser un commentaire">
+
 </div>
 
+</div>
+
+<div class="rightSide">
+    <h1>Articles en tendances</h1>
+    <?php foreach ($trendingArticles as $item) { ?>
+    <a href="/article?id=<?php echo $item['id'] ?>"><div class="articleTendance" style="background-image: url(<?= $item['image']; ?> );
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-size: 100%;"> <p> <?= $item['title'] ?></p> </div></a>
 <?php } ?>
 </div>
-<style>
-    .articleTendance {
-        background-image: url(<?= $article['image']; ?> );
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
-</style>
+
+</div>
+
 
 <script type="module" src="http://localhost:5173/@vite/client"></script>
 <script type="module" src="http://localhost:5173/resources/scripts/main.js"></script>
