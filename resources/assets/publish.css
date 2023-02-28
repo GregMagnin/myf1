@@ -1,0 +1,70 @@
+.titleArticleContainer {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 10vw;
+    font-family: 'Inter', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vw;
+    text-align: center;
+}
+
+.textareaTitle  {
+    padding-left: 10px;
+    padding-top: 8px;
+    font-family: 'Inter';
+    border-radius: 50px;
+    height: 2vw;
+}
+
+.contentArticleContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 20vw;
+    font-family: 'Inter', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+.textareaContent  {
+    padding-left: 10px;
+    padding-top: 8px;
+    font-family: 'Inter';
+    border-radius: 20px;
+    height: 15vw;
+    overflow-y: scroll;
+}
+
+.createArticleContainer {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 150px;
+}
+
+.createArticleButton {
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    width: 150px;
+    height: 50px;
+    margin-top: 5vh;
+    border-radius: 70px;
+}
+
+.imageArticleContainer {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: auto;
+    font-family: 'Inter', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vw;
+    text-align: center;
+}
+

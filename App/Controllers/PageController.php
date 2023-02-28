@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 use App\Models\PageModel;
+use Respect\Validation\Validator as v;
+
 require_once './vendor/autoload.php';
 
 class PageController {
@@ -36,6 +38,64 @@ class PageController {
         $publishComms = $pageModel->publishComments();
     }
 
+    public function uploadArticle() : void {
+        if(isset($_FILES['imageArticle'])) {
+            $errors= array();
+            $file_name = $_FILES['imageArticle']['name'];
+            $file_size =$_FILES['imageArticle']['size'];
+            $file_tmp =$_FILES['imageArticle']['tmp_name'];
+            $file_type=$_FILES['imageArticle']['type'];
+            $file_parts = explode('.',$_FILES['imageArticle']['name']);
+            $file_ext=strtolower(end($file_parts));
+            $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/public/images/';
+            
+            $extensions= array("jpeg","jpg","png");
+            
+            if(in_array($file_ext,$extensions)=== false){
+                $errors[]="Extension non prise en charge, veuillez choisir un fichier JPEG ou PNG.";
+            }
+            
+            if($file_size > 10097152){
+                $errors[]='La taille du fichier doit être inférieure à 10 Mo';
+            }
+            
+            if(empty($errors)==true){
+               move_uploaded_file($file_tmp,$target_dir.$file_name);
+                $titleValidator = v::stringType()->length(30, null);
+            $contentValidator = v::stringType()->length(100, null);
+            if (isset($_POST['articleTitle']) && !empty($_POST['articleTitle']) && isset($_POST['articleContent']) && !empty($_POST['articleContent'])) {
+            $title = $_POST['articleTitle'];
+            $content = $_POST['articleContent'];
+            $image = '/public/images/' . $file_name;
+            var_dump('toto2');
+            $date = date('Y-m-d-H-i-s');
+            $author = $_SESSION["user"];
+            var_dump('toto3');
+            if (!$titleValidator->validate($title)) {
+                header("location: /error");    
+            }  elseif (!$contentValidator->validate($content)) {
+                header("location: /error");
+            } else {
+                var_dump('toto4');
+                $pageModel = new PageModel();
+                $articleUpload = $pageModel->uploadAnArticle($title, $content, $image, $author, $date);
+                var_dump('toto5');
+                header ('Location:/homepage');
+                } 
+
+            
+            } 
+            
+            }
+        } 
+        
+
+    }
+
+    public function publishArticlePage(): string {
+        return require './resources/views/publish.php';
+    }
+
     public function errorMessage(): string {
         return require './resources/exceptions/errorMessage.php';
     }
@@ -47,6 +107,12 @@ class PageController {
     }
     public function errorMessagePassword(): string {
         return require './resources/exceptions/errorMessagePassword.php';
+    }
+    public function errorMessageTitle(): string {
+        return require './resources/exceptions/errorMessageTitle.php';
+    }
+    public function errorMessageContent(): string {
+        return require './resources/exceptions/errorMessageContent.php';
     }
     public function error(): string {
         return require './resources/views/error.html';

@@ -2,5 +2,5 @@
 
 require_once 'vendor/autoload.php';
 
-$userTable = new \Database\Migrations\CreateCommentsTable();
+$userTable = new \Database\Seeders\SeedArticles();
 $userTable->handle();

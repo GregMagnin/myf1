@@ -28,7 +28,7 @@
 </nav>
 
 <div id="userInfoMenu" class=" <?= (isset($_SESSION["loggedin"])) ? "open" : "hidden" ?>">
-<p><?=
+<p id="greetingUser"><?=
         'Bonjour ' . $_SESSION["user"];
     ?></p>
 <hr class="hr1">
@@ -63,15 +63,15 @@
 <?php foreach ($articles as $article) { ?>
     <a href="/article?id=<?php echo $article['id'] ?>">
     <div class="containerArticles">
-    <img src="<?= $article['image'] ?> " alt="Image de l'article">
+    <img src="<?= $article['image'] ?> " alt="Image de l'article"> 
     <div class="articlesText">
     <p class="title">
-    <?= $article['title'] ?>  </p>  <br>
+    <?= $article['title'] ?>  </p></a>  <br>
     <p class="moreInfo"><?= $article['author'] ?> <br>
     Date de publication : <?= $article['publish_date'] ?></p>
     </div>
 </div>
-</a>
+
 <hr class="hrHomepage">
 
 <?php } ?>
@@ -81,25 +81,38 @@
     background-image: url(<?php echo $articles[0]['image']; ?>);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .firstArticleRight {
     background-image: url(<?php echo $articles[1]['image']; ?>);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .secondArticleRight {
     background-image: url(<?php echo $articles[2]['image']; ?>);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 </style>
 <script type="module" src="http://localhost:5173/@vite/client"></script>
 <script type="module" src="http://localhost:5173/resources/scripts/main.js"></script>
+<script>
+    let heure = new Date().getHours();
+
+let paragraphe = document.getElementById('greetingUser');
+
+// Vérification de l'heure
+if (heure >= 20 || heure < 6) {
+    paragraphe.innerHTML = "Bonsoir " + "<?php echo $_SESSION['user']; ?>";
+} else {
+    paragraphe.innerHTML = "Bonjour " + "<?php echo $_SESSION['user']; ?>";
+}
+
+</script>
 
 </body>
 </html>

@@ -16,7 +16,8 @@ final class CreateArticlesTable extends Connection
             content TEXT NOT NULL,
             images VARCHAR(255) NOT NULL,
             author VARCHAR (255) NOT NULL,
-            publish_date DATETIME NOT NULL
+            publish_date DATETIME NOT NULL,
+            views INT NOT NULL
             )"
         ]; 
 

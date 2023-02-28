@@ -10,7 +10,7 @@
 
 <nav class="navbar">
  <ul class="navList">
-    <li class="logoMyF1"><img src="../../public/images/tinywow_MyF1_9583839.png" alt="Logo MyF1"></li>
+    <a href="/homepage"><li class="logoMyF1"><img src="../../public/images/tinywow_MyF1_9583839.png" alt="Logo MyF1"></li></a>
     <span class="verticalBar"></span>
     <li class="lastPosts">DERNIERS <br> ARTICLES</li>
     <li class="popularPosts">ARTICLES EN <br> TENDANCES</li>
@@ -45,7 +45,7 @@
 
 <div class="leftSide">
 <div class="authorPublish">
-<p class="author">Autheur : <?= $article['author']; ?> </p> <p class="publish">Date de publication : <?= $article['publish_date']; ?></p> <p class="views"><?= $article['views'];  ?> vues</p>
+<p class="author">Auteur : <?= $article['author']; ?> </p> <p class="publish">Date de publication : <?= $article['publish_date']; ?></p> <p class="views"><?= $article['views'];  ?> vues</p>
 </div>
 <div class="articleImageContainer">
 <img class="articleImage" src="<?= $article['image']; ?>" alt="Image de l'article"> <br>

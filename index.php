@@ -50,6 +50,12 @@ switch (getUri()) {
         $page->updateViews($_GET['id']);
         $page->article($_GET['id']);
         break;
+    case '/publish':
+        $page->publishArticlePage();
+        break;
+    case '/publishArticles':
+        $page->uploadArticle();
+        break;
 }
 
 ?>

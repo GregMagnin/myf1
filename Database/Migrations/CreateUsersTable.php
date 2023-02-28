@@ -11,7 +11,8 @@ final class CreateUsersTable extends Connection
 
         $queries = [
             "CREATE TABLE users (
-            ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            username VARCHAR(255) NOT NULL,
             email VARCHAR(80) NOT NULL,
             password VARCHAR(255) NOT NULL
             )"

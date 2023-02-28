@@ -36,8 +36,14 @@ class PageModel extends Connection {
         return $pdo->query($sql)->fetchAll();
     }
 
-    public function publishComments(string $content, ): array {
-        $pdo = $this->connection;
-        $sql = 
+    public function uploadAnArticle(string $title, string $content, string $image, string $author, string $date) : void {
+        $sql = "INSERT INTO articles (title, content, image, author, publish_date) VALUES (:title, :content, :image, :author, :publish_date)";
+        $query=$this->connection->prepare($sql); 
+        $query->bindParam(":title", $title, \PDO::PARAM_STR);
+        $query->bindParam(":content", $content, \PDO::PARAM_STR);
+        $query->bindParam(":image", $image, \PDO::PARAM_STR);
+        $query->bindParam(":author", $author, \PDO::PARAM_STR);
+        $query->bindParam(":publish_date", $date, \PDO::PARAM_STR);
+        $query->execute();
     }
 }
