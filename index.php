@@ -12,9 +12,9 @@ $page = new PageController();
 switch (getUri()) {
     case '/':
         $page->homepage();
-        break;    
+        break;
     case '/login':
-         $auth->login();
+        $auth->login();
         break;
     case '/register':
         $auth->register();
@@ -26,10 +26,10 @@ switch (getUri()) {
         $auth->registerUser();
         break;
     case '/logUser':
-         $auth->logUser();
+        $auth->logUser();
         break;
     case '/errorMessage':
-         $page->errorMessage();
+        $page->errorMessage();
         break;
     case '/errorMessageMail':
         $page->errorMessageMail();
@@ -56,6 +56,16 @@ switch (getUri()) {
     case '/publishArticles':
         $page->uploadArticle();
         break;
+    case '/lastArticles':
+        $page->lastArticles();
+        break;
+    case '/trendingsArticles':
+        $page->trendingsArticles();
+        break;
+    case '/rankings':
+        $page->rankings();
+        break;
+
 }
 
 ?>

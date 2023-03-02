@@ -4,34 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil - MyF1</title>
+    <title>Derniers Articles - MyF1</title>
 </head>
-<body id="homepage">
+<body id="lastArticles">
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/navbar.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/menu.php'; ?>
 
-
-<div class="containerFirstArticles">
-<a href="/article?id=<?php echo $articles[0]['id'] ?>"><div class="firstArticle">
-<h1><?php echo $articles[0]['title']; ?></h1>
-</div></a>
+<h1 class="lastArticleTitle">Voici les derniers articles mis en ligne sur le site :</h1>
 
 
-<div class="articlesRight">
-
-<a href="/article?id=<?php echo $articles[1]['id'] ?>"><div class="firstArticleRight">
-    <h1><?php echo $articles[1]['title']; ?> </h1>
-</div>
-</a>
-<a href="/article?id=<?php echo $articles[2]['id']; ?>">
-<div class="secondArticleRight">
-<h1><?php echo $articles[2]['title']; ?> </h1>
-</div></a>    
-</div>
-</div>
-
-<?php foreach ($articles as $article) { ?>
+<?php foreach ($lastArticles as $article) { ?>
     <a href="/article?id=<?php echo $article['id'] ?>">
     <div class="containerArticles">
     <img src="<?= $article['image'] ?> " alt="Image de l'article"> 
@@ -47,33 +30,10 @@
 
 <?php } ?>
 
-<style>
-.firstArticle {
-    background-image: url(<?php echo $articles[0]['image']; ?>);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-}
 
-.firstArticleRight {
-    background-image: url(<?php echo $articles[1]['image']; ?>);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-}
-
-.secondArticleRight {
-    background-image: url(<?php echo $articles[2]['image']; ?>);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-}
-</style>
 <script type="module" src="http://localhost:5173/@vite/client"></script>
 <script type="module" src="http://localhost:5173/resources/scripts/main.js"></script>
+
 <script>
     let heure = new Date().getHours();
 
@@ -87,6 +47,5 @@ if (heure >= 20 || heure < 6) {
 }
 
 </script>
-
 </body>
 </html>

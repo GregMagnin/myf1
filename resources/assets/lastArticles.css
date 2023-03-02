@@ -1,0 +1,11 @@
+#lastArticles {
+    overflow-x: hidden;
+}
+
+.lastArticleTitle {
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-family: 'Inter';
+}
+

@@ -13,6 +13,7 @@ class PageController {
         return require './resources/views/homepage.php';
     }
 
+
     public function article(string $id): int {
         $pageModel = new PageModel();
         $article = $pageModel->article($id);
@@ -67,19 +68,19 @@ class PageController {
             $title = $_POST['articleTitle'];
             $content = $_POST['articleContent'];
             $image = '/public/images/' . $file_name;
-            var_dump('toto2');
+            
             $date = date('Y-m-d-H-i-s');
             $author = $_SESSION["user"];
-            var_dump('toto3');
+           
             if (!$titleValidator->validate($title)) {
                 header("location: /error");    
             }  elseif (!$contentValidator->validate($content)) {
                 header("location: /error");
             } else {
-                var_dump('toto4');
+               
                 $pageModel = new PageModel();
                 $articleUpload = $pageModel->uploadAnArticle($title, $content, $image, $author, $date);
-                var_dump('toto5');
+            
                 header ('Location:/homepage');
                 } 
 
@@ -92,8 +93,27 @@ class PageController {
 
     }
 
+    public function partial() : string {
+        return require './resources/partials';
+    }
+
+    public function lastArticles() : string {
+        $pageModel = new PageModel();
+        $lastArticles = $pageModel->all();
+        return require './resources/views/lastArticlePage.php';
+    }
+
+    public function trendingsArticles() : string {
+        $pageModel = new PageModel();
+        $popularArticles = $this->sortArticlesByViews();
+        return require './resources/views/trendingArticlePage.php';
+    }
     public function publishArticlePage(): string {
         return require './resources/views/publish.php';
+    }
+
+    public function rankings(): string {
+        return require './resources/views/rankings.php';
     }
 
     public function errorMessage(): string {
