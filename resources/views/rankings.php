@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classements - MyF1</title>
 </head>
-<body id="homepage">
+<body id="rankingPage">
 
-
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/navbar.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/menu.php'; ?>
-
-
+  
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/navbar.php'; ?>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/menu.php'; ?>
+  
+  <div class="buttons">
+    <div class="driverButton"><button id="driverRankButton">Championnat pilote</button></div>
+    <div class="constructorButton"><button id="constructorRankButton">Championnat constructeur</button></div>
+  </div>
+<div class="rankings" id="ranking"></div>
 
 
 <script type="module" src="http://localhost:5173/@vite/client"></script>

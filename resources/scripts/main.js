@@ -5,6 +5,8 @@ import '../assets/homepage.css';
 import '../assets/error.css';
 import '../assets/article.css';
 import '../assets/publish.css';
-import '../assets/lastArticles.css'
+import '../assets/lastArticles.css';
+import '../assets/ranking.css';
 import './openUserMenu';
 import './greetingUser';
+import './ranking';

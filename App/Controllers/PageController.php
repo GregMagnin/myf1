@@ -62,8 +62,8 @@ class PageController {
             
             if(empty($errors)==true){
                move_uploaded_file($file_tmp,$target_dir.$file_name);
-                $titleValidator = v::stringType()->length(30, null);
-            $contentValidator = v::stringType()->length(100, null);
+                $titleValidator = v::stringType()->length(20, null);
+            $contentValidator = v::stringType()->length(70, null);
             if (isset($_POST['articleTitle']) && !empty($_POST['articleTitle']) && isset($_POST['articleContent']) && !empty($_POST['articleContent'])) {
             $title = $_POST['articleTitle'];
             $content = $_POST['articleContent'];

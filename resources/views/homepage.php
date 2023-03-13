@@ -53,7 +53,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    
 }
 
 .firstArticleRight {
@@ -61,7 +61,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
 }
 
 .secondArticleRight {
@@ -69,7 +68,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
 }
 </style>
 <script type="module" src="http://localhost:5173/@vite/client"></script>
@@ -79,7 +77,7 @@
 
 let paragraphe = document.getElementById('greetingUser');
 
-// Vérification de l'heure
+
 if (heure >= 20 || heure < 6) {
     paragraphe.innerHTML = "Bonsoir " + "<?php echo $_SESSION['user']; ?>";
 } else {
