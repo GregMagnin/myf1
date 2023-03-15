@@ -7,7 +7,7 @@
     <title>Publier un article - MyF1</title>
 </head>
 
-<body>
+<body id="publishPage">
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/navbar.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/menu.php'; ?>

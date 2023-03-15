@@ -1,3 +1,7 @@
+#publishPage {
+    overflow-x: hidden;
+}
+
 .titleArticleContainer {
     display: flex;
     flex-direction: column;

@@ -48,6 +48,7 @@ class PageController {
             $file_type=$_FILES['imageArticle']['type'];
             $file_parts = explode('.',$_FILES['imageArticle']['name']);
             $file_ext=strtolower(end($file_parts));
+            $deleteSpaceFileName = str_replace(' ', '', $file_name);
             $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/public/images/';
             
             $extensions= array("jpeg","jpg","png");
@@ -61,17 +62,15 @@ class PageController {
             }
             
             if(empty($errors)==true){
-               move_uploaded_file($file_tmp,$target_dir.$file_name);
+               move_uploaded_file($file_tmp,$target_dir.$deleteSpaceFileName);
                 $titleValidator = v::stringType()->length(20, null);
             $contentValidator = v::stringType()->length(70, null);
             if (isset($_POST['articleTitle']) && !empty($_POST['articleTitle']) && isset($_POST['articleContent']) && !empty($_POST['articleContent'])) {
             $title = $_POST['articleTitle'];
             $content = $_POST['articleContent'];
-            $image = '/public/images/' . $file_name;
-            
+            $image = '/public/images/' . $deleteSpaceFileName;
             $date = date('Y-m-d-H-i-s');
             $author = $_SESSION["user"];
-           
             if (!$titleValidator->validate($title)) {
                 header("location: /error");    
             }  elseif (!$contentValidator->validate($content)) {
@@ -80,7 +79,10 @@ class PageController {
                
                 $pageModel = new PageModel();
                 $articleUpload = $pageModel->uploadAnArticle($title, $content, $image, $author, $date);
-            
+                $articleId = $articleUpload;
+                $userId = $_SESSION["id"];
+                $bindArticleUser = $pageModel->bindArticleUser($articleId, $userId);
+                
                 header ('Location:/homepage');
                 } 
 

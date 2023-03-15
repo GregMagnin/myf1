@@ -1,6 +1,7 @@
 #article {
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .articlePage {
@@ -61,9 +62,7 @@
     flex-direction: column;
     width: 20vw;
     height: auto;
-    
-    margin-top: 70vh;
-    background-color: red;
+     margin-top: 70vh;
 }
 
 .articleTendance {

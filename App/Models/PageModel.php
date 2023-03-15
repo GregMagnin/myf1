@@ -36,7 +36,7 @@ class PageModel extends Connection {
         return $pdo->query($sql)->fetchAll();
     }
 
-    public function uploadAnArticle(string $title, string $content, string $image, string $author, string $date) : void {
+    public function uploadAnArticle(string $title, string $content, string $image, string $author, string $date) : int {
         $sql = "INSERT INTO articles (title, content, image, author, publish_date) VALUES (:title, :content, :image, :author, :publish_date)";
         $query=$this->connection->prepare($sql); 
         $query->bindParam(":title", $title, \PDO::PARAM_STR);
@@ -45,5 +45,16 @@ class PageModel extends Connection {
         $query->bindParam(":author", $author, \PDO::PARAM_STR);
         $query->bindParam(":publish_date", $date, \PDO::PARAM_STR);
         $query->execute();
+
+        return (int) $this->connection->lastInsertId();
     }
+    public function bindArticleUser(int $articleId, int $userId) : void {
+        $sql = "INSERT INTO article_user (article_id, user_id) VALUES (:articleId, :userId)"; 
+        $query=$this->connection->prepare($sql); 
+        $query->bindParam(":articleId", $articleId, \PDO::PARAM_INT);
+        $query->bindParam(":userId", $userId, \PDO::PARAM_INT);
+        $query->execute();
+    }
+
 }
+
