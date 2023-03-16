@@ -56,5 +56,29 @@ class PageModel extends Connection {
         $query->execute();
     }
 
-}
+    public function modifyUsername(string $newUsername, int $id) : void{
+        $sql = "UPDATE users SET username = :newUsername WHERE id = :id";
+        $query=$this->connection->prepare($sql);
+        $query->bindParam(":newUsername", $newUsername, \PDO::PARAM_STR);
+        $query->bindParam(":id", $id, \PDO::PARAM_INT);
+        $query->execute();
+    }
 
+    public function modifyEmail(string $newEmail, int $id) : void{
+        $sql = "UPDATE users SET email = :newEmail WHERE id = :id";
+        $query=$this->connection->prepare($sql);
+        $query->bindParam(":newEmail", $newEmail, \PDO::PARAM_STR);
+        $query->bindParam(":id", $id, \PDO::PARAM_INT);
+        $query->execute();
+    }
+
+    public function modifyPassword(string $newPassword, int $id) : void{
+        $sql = "UPDATE users SET password = :newPassword WHERE id = :id";
+        $query=$this->connection->prepare($sql);
+        $param_password = password_hash($newPassword, PASSWORD_DEFAULT);
+        $query->bindParam(":newPassword", $param_password, \PDO::PARAM_STR);
+        $query->bindParam(":id", $id, \PDO::PARAM_INT);
+        $query->execute();
+    }
+
+}

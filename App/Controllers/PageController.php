@@ -118,6 +118,33 @@ class PageController {
         return require './resources/views/rankings.php';
     }
 
+    public function account(): string {
+        return require './resources/views/account.php';
+    }
+
+    public function modifyAccount(): string {
+        $id = $_SESSION['id'];
+        $pageModel = new PageModel();
+    
+        if (isset($_POST['newUsername']) && !empty($_POST['newUsername'])) { 
+            $newUsername = $_POST['newUsername'];
+            $modifyUsername = $pageModel->modifyUsername($newUsername, $id);
+            $_SESSION["user"] = $newUsername;
+        }
+    
+        if (isset($_POST['newEmail']) && !empty($_POST['newEmail'])) {
+            $newEmail = $_POST['newEmail'];
+            $modifyEmail = $pageModel->modifyEmail($newEmail, $id);
+        }
+
+        if (isset($_POST['newPassword']) && !empty($_POST['newPassword'])) {
+            $newPassword = $_POST['newPassword'];
+            $modifyPassword = $pageModel->modifyPassword($newPassword, $id);
+        }
+    
+        return require './resources/views/account.php';
+    }
+
     public function errorMessage(): string {
         return require './resources/exceptions/errorMessage.php';
     }

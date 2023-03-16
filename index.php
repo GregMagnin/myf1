@@ -65,7 +65,24 @@ switch (getUri()) {
     case '/rankings':
         $page->rankings();
         break;
-
+    case '/myAccount':
+        $page->account();
+        break;
+case '/modifyAccount':
+            $page->modifyAccount();
+            break;  
+        case '/modifyUsername':
+            $page->modifyUsername();
+            break;    
+    case '/modifyPassword':
+        $page->modifyPassword();
+        break;
+    case '/modifyEmail':
+        $page->modifyEmail();
+        break;
+    case '/deleteAccount':
+        $page->deleteAccount();
+        break;    
 }
 
 ?>
