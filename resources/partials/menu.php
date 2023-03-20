@@ -1,4 +1,4 @@
-<div id="userInfoMenu" class=" <?= (isset($_SESSION["loggedin"])) ? "open" : "hidden" ?>">
+<div id="userInfoMenu" class="userInfoMenu" <?= (isset($_SESSION["loggedin"])) ? "open" : "hidden" ?>">
 <p id="greetingUser"><?=
         'Bonjour ' . $_SESSION["user"];
     ?></p>

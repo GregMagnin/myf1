@@ -1,0 +1,162 @@
+.navbarMobile {
+    display: none;
+}
+
+.navMenuList {
+    display: none;
+}
+
+.modal {
+    display: none;
+}
+
+.navbar {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.navList > li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.navList > a {
+    color:white;
+}
+
+.navList {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    width: 100vw;
+}
+
+.verticalBar {
+    width: 2px;
+    height: 40px;
+    background-color: grey;
+}
+
+.searchIcon > img {
+    width: 40px;
+    height: 40px;
+}
+
+.menu-icon {
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2000;
+  }
+  
+  .icon-bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5px;
+    transition: transform 0.5s ease-out;
+  }
+
+  
+  .icon-bar:first-child {
+    transform: translateY(-8px);
+  }
+  
+  .icon-bar:last-child {
+    transform: translateY(8px);
+  }
+
+  .menu-icon-active .icon-bar:first-child {
+    transform: translateY(0) rotate(45deg);
+  }
+  
+  .menu-icon-active .icon-bar:last-child {
+    transform: translateY(0) rotate(-45deg);
+  }
+  
+  .menu-icon-active .icon-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .navbarMobile {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    }
+    
+    .navList {
+        display: none
+    }
+
+    .navListMobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        width: 100vw;
+    }
+
+    .accountIcon > img {
+    width: 40px;
+    height: 40px;
+    }
+
+    .modal-container {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+      }
+      
+      .modal {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 5px;
+      }
+      
+      .modal ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .modal li {
+        margin-bottom: 20px;
+        font-family: 'Inter';
+      }
+      
+      .modal a {
+        color: white;
+        text-decoration: none;
+      }
+      
+
+}
+

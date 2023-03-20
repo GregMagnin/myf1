@@ -8,8 +8,7 @@
 </head>
 <body id="article">
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/navbar.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/menu.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/partialManager.php'; ?>
 
 <div class="articlePage">
 
@@ -25,10 +24,6 @@
 <p class="contentArticle"><?= $article['content'] ?> </p>
 </div>
 
-<div class="letCommentBoxContainer">
-<input type="text" class="letCommentBox" name="letCommentBox" id="letCommentBox" placeholder="Laisser un commentaire">
-
-</div>
 
 </div>
 

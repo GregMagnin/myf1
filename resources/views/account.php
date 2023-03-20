@@ -8,8 +8,7 @@
 </head>
 <body id="account">
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/navbar.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/menu.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/partialManager.php'; ?>
 
 <h1 class="titleAccount"></h1>
 <form action="/modifyAccount" method="post">

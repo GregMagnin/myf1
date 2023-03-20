@@ -8,8 +8,7 @@
 </head>
 <body id="lastArticles">
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/navbar.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/menu.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/partialManager.php'; ?>
 
 <h1 class="lastArticleTitle">Voici les articles les plus vus mis en ligne sur le site :</h1>
 

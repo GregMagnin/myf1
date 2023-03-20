@@ -8,9 +8,7 @@
 </head>
 <body id="homepage">
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/navbar.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/menu.php'; ?>
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/partialManager.php'; ?>
 
 <div class="containerFirstArticles">
 <a href="/article?id=<?php echo $articles[0]['id'] ?>"><div class="firstArticle">
@@ -68,6 +66,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+
 }
 </style>
 <script type="module" src="http://localhost:5173/@vite/client"></script>

@@ -9,8 +9,7 @@
 
 <body id="publishPage">
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/navbar.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/menu.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/partialManager.php'; ?>
 
 
 <form action="/publishArticles" method="post" enctype="multipart/form-data">

@@ -8,9 +8,7 @@
 </head>
 <body id="rankingPage">
 
-  
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/navbar.php'; ?>
-  <?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/menu.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/resources/partials/partialManager.php'; ?>
   
   <div class="buttons">
     <div class="driverButton"><button id="driverRankButton">Championnat pilote</button></div>

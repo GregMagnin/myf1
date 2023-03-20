@@ -1,6 +1,7 @@
 let userInfo = document.getElementById("userInfo");
 let userInfoMenu = document.getElementById("userInfoMenu");
 
+
 window.onload = (event) => {
     userInfoMenu.classList.remove("open"); 
 }

@@ -1,0 +1,83 @@
+.userInfo a {
+    color: white;
+}
+
+.modal-container-menu {
+    display: none;
+}
+
+#userInfoMenu {
+    display: none;
+    position: absolute;
+    right: 45px;
+    z-index: 10;
+    gap: 7px;
+    background-color: black;
+    color: white;
+    width: 8vw;
+    height: 230px;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+}
+
+@media screen and (min-width: 1500px) {
+    #userInfoMenu {
+        height: 180px;
+    }    
+}
+
+#userInfoMenu a {
+    color: white;
+}
+
+#userInfoMenu.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#userInfoMenu hr {
+    width: 10vw;
+}
+
+.logoutText {
+    color: red;
+}
+
+@media screen and (max-width: 768px) {
+
+.modal-container-menu {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    
+  }
+  
+  .modal-menu {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    
+  }
+
+  .modal p {
+    margin-bottom: 20px;
+    font-family: 'Inter';
+  }
+
+  .modal-menu a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter';
+  }
+}

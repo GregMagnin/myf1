@@ -8,4 +8,7 @@ import '../assets/publish.css';
 import '../assets/lastArticles.css';
 import '../assets/ranking.css';
 import '../assets/account.css';
+import '../assets/menu.css';
+import '../assets/navbar.css';
+import './burger';
 import './openUserMenu';
