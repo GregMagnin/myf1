@@ -145,6 +145,13 @@ class PageController {
         return require './resources/views/account.php';
     }
 
+    public function deleteAccount() : string {
+        $id = $_SESSION['id'];
+        $pageModel = new PageModel();
+        $accountDelete = $pageModel->deleteAccount($id);
+        return require './resources/views/register.php';
+    }
+
     public function errorMessage(): string {
         return require './resources/exceptions/errorMessage.php';
     }

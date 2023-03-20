@@ -69,7 +69,7 @@ input[type="password"] {
 .hasAccompt {
     text-align: center;
     font-family: 'Inter', sans-serif;
-    margin-top: 2vh;
+    /* margin-top: 1vh; */
 }
 
 .hasAccompt a {
@@ -82,8 +82,8 @@ input[type="password"] {
 
 .buttonSignIn {
     display: flex;
-    background-color: white;
-    color: #7d7d7d;
+    background-color: black;
+    color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -96,17 +96,21 @@ input[type="password"] {
     font-family: 'Inter', sans-serif;
 }
 
-.logo {
-    background-image: url('../../public/images/google.png');
-    background-size: contain;
+.buttonNoSignIn {
     display: flex;
+    background-color: white;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: solid 1px black;
+    border-radius: 10px;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
-    margin-right: 8px;
-    background-repeat: no-repeat;
-  }
+    margin: auto;
+    font-family: 'Inter', sans-serif;
+}
 
 .rightSideLogin {
     display: flex;
@@ -121,6 +125,13 @@ input[type="password"] {
     justify-content: center;
     font-family: 'Inter', sans-serif;
     color: red;
+}
+
+.buttonLoginContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 3vw;
 }
 
 .shake-horizontal {
@@ -185,42 +196,53 @@ input[type="password"] {
     }
   }
 
-@media screen and (max-width: 600px) {
-    .imgRight {
-      display: none;
-    }
-    .leftSide {
-      width: 100vw;
-    }
-    .rightSide {
-        width: 0vw;
-    }
-    .titleLogin {
-        font-size: 5vw;
-    }
-    .textLogin {
-        font-size: 4vw;
-    }
-    input[type="text"] {
-        font-size: 2.8vw;
-    }
-    input[type="password"] {
-        font-size: 2.8vw;
-    }
-  }
+  @media screen and (max-width: 900px) {
 
-  @media screen and (max-width: 600px) {
+    .rightSideLogin {
+        display: none;
+        width: 0%;
+      }
+      .leftSideLogin {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;
+      }
+
+
+    .buttonLoginContainer 
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        width: auto;
+        align-items: center;
+        gap: 10px;
+    }
+
+    input[type="text"]::placeholder {
+        font-size: 0.8rem;
+        
+    }
+    input[type="password"]::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .formLogin input {
+        width: 80vw;
+    }
+
     .titleLogin {
-        font-size: 8vw;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
     }
+
     .textLogin {
-        font-size: 8vw;
+        text-align: center;
+        color: #808080;
+        font-size: 1.5rem;
+        margin-top: 2vh;
     }
-    input[type="text"] {
-        font-size: 4.8vw;
-    }
-    input[type="password"] {
-        font-size: 4.8vw;
-    }
-  }
-  
+}

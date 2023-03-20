@@ -81,4 +81,10 @@ class PageModel extends Connection {
         $query->execute();
     }
 
+    public function deleteAccount(int $id) : void {
+        $sql = "DELETE FROM users WHERE id = $id";
+        $query=$this->connection->prepare($sql);
+        $query->execute();
+    }
+
 }

@@ -7,7 +7,7 @@
     height: 100vh;
 }
 
-.leftSide {
+.leftSideRegister {
 display: flex;
 flex-direction: column;
 width: 50vw;
@@ -84,8 +84,8 @@ input[type="password"] {
 
 .buttonGoogle {
     display: flex;
-    background-color: white;
-    color: #7d7d7d;
+    background-color: black;
+    color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
@@ -97,17 +97,21 @@ input[type="password"] {
     font-family: 'Inter', sans-serif;
 }
 
-.logo {
-    background-image: url('../../public/images/google.png');
-    background-size: contain;
+.buttonNoSignUp {
     display: flex;
+    background-color: white;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: solid 1px black;
+    border-radius: 10px;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
-    margin-right: 8px;
-    background-repeat: no-repeat;
-  }
+    font-family: 'Inter', sans-serif;
+}
+
 
 .rightSideRegister {
     display: flex;
@@ -115,46 +119,67 @@ input[type="password"] {
     background-image: url(../../public/images/f1-car-g535d6d5c5_1920.jpg);
     background-position: center;
     background-repeat: no-repeat;
+    background-color: red;
+}
+
+.buttonRegisterContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 3vw;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .rightSideRegister {
+        display: none;
+        width: 0%;
+      }
+      .leftSideRegister {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;
+      }
+
+
+    .buttonRegisterContainer 
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        width: auto;
+        align-items: center;
+        gap: 10px;
+    }
+
+    input[type="text"]::placeholder {
+        font-size: 0.8rem;
+        
+    }
+    input[type="password"]::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .formRegister input {
+        width: 80vw;
+    }
+
+    .titleRegister {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .textRegister {
+        text-align: center;
+        color: #808080;
+        font-size: 1.5rem;
+        margin-top: 2vh;
+    }
 }
 
 
 
-@media screen and (max-width: 600px) {
-    .imgRight {
-      display: none;
-    }
-    .leftSide {
-      width: 100vw;
-    }
-    .rightSide {
-        width: 0vw;
-    }
-    .titleRegister {
-        font-size: 5vw;
-    }
-    .textRegister {
-        font-size: 4vw;
-    }
-    input[type="text"] {
-        font-size: 2.8vw;
-    }
-    input[type="password"] {
-        font-size: 2.8vw;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .titleRegister {
-        font-size: 8vw;
-    }
-    .textRegister {
-        font-size: 8vw;
-    }
-    input[type="text"] {
-        font-size: 4.8vw;
-    }
-    input[type="password"] {
-        font-size: 4.8vw;
-    }
-  }
   

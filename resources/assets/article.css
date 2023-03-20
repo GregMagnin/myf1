@@ -10,7 +10,7 @@
     flex-direction: row;
 }
 
-.leftSide {
+.leftSideArticle {
     display: flex;
     flex-direction: column;
     width: 80vw;

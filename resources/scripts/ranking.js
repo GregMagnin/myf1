@@ -11,7 +11,6 @@ const requestOptions = {
   let tableDriver;
   let tableConstructor;
   
-  // Ajouter les fonctions de rappel d'événement pour les boutons
   driverButton.addEventListener('click', (event) => {
 	fetch("http://ergast.com/api/f1/2023/driverStandings", requestOptions)
 	  .then(response => response.text())

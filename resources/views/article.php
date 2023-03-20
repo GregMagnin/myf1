@@ -13,7 +13,7 @@
 
 <div class="articlePage">
 
-<div class="leftSide">
+<div class="leftSideArticle">
 <div class="authorPublish">
 <p class="author">Auteur : <?= $article['author']; ?> </p> <p class="publish">Date de publication : <?= $article['publish_date']; ?></p> <p class="views"><?= $article['views'];  ?> vues</p>
 </div>

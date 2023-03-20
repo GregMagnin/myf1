@@ -11,7 +11,7 @@
 <body>
 
     <div class="loginContainer">
-        <div class="leftSide">
+        <div class="leftSideLogin">
             <div class="upperText">
                 <h1 class="titleLogin">Se connecter</h1>
                 <p class="textLogin">Rentrez vos informations <br> pour vous connecter</p>
@@ -25,8 +25,10 @@
                 <p>Pas de compte ? <br>
                     Inscrivez vous <a href="/register">ici</a> </p>
             </div>
+            <div class="buttonLoginContainer">
             <div class="signUpGoogle"><a href="/homepage"><button type="submit" formaction="/logUser" class="buttonSignIn">Se connecter</button></a></div>
-            <div class="noSignUp"><a href="/homepage"><p class="buttonSignIn">Accèder au site sans se connecter</p></a></div>
+            <div class="noSignUp"><a href="/homepage"><p class="buttonNoSignIn">Accéder au site sans se connecter</p></a></div>
+            </div>
         </div>
         <div class="rightSideLogin">
         </div>

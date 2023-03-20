@@ -9,5 +9,3 @@ import '../assets/lastArticles.css';
 import '../assets/ranking.css';
 import '../assets/account.css';
 import './openUserMenu';
-import './greetingUser';
-import './ranking';

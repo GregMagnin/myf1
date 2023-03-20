@@ -21,6 +21,7 @@
 
 <script type="module" src="http://localhost:5173/@vite/client"></script>
 <script type="module" src="http://localhost:5173/resources/scripts/main.js"></script>
+<script src="http://localhost:5173/resources/scripts/ranking.js"></script>
 
 <script>
     let heure = new Date().getHours();
